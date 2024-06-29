@@ -16,6 +16,7 @@ onBeforeMount(()=>{
   console.log("挂载前：",document.getElementById("btn01"))
 })
 
+
 onMounted(()=>{
   //
   console.log("挂载完成：count",count.value)
