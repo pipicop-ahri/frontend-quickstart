@@ -1,10 +1,10 @@
 // 1.let
 
 // 1.1 越域 var可越域，let不可
-// {
-//     var a = 1;
-//     let b = 2;
-// }
+{
+    var a = 1;
+    let b = 2;
+}
 // console.log(a);
 // console.log(b);
 
