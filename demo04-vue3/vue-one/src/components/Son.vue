@@ -33,7 +33,7 @@ function buy(){
 <!--    <p>收到了书：{{books}},价格为:{{money}}</p>-->
       <button @click="buy">花钱</button>
       <slot name="btn">
-        <button ></button>
+        <button></button>
       </slot>
   </div>
 </template>
