@@ -25,18 +25,37 @@ const person = {
 }
 
 // 默认解构 指定新的变量名 嵌套解构 默认值 剩余属性
-
+const {name,age:jAge,sex,sort=1,dept:{deptName:dName,...others}} = person;
+console.log(name);
+console.log(jAge);
+console.log(sort);
+console.log(others);
+console.log(dName);
 
 // 4.链判断:原理 判断属性 判断方法
-
+// 原理：符号?.，根据如果后面的变更或方法为null,undefined时，则短路后面的操作。
+const company = person?.dept?.company;
+let create = person?.dept?.create || '无';
+console.log(company);
+console.log(create);
+person.print2?.();
+person.print?.();
 
 // 5.参数默认值:基本类型 引用类型 模版字符串
-
+// 模板字符串：使用``包起来的，在${}中可以使用js变量或表达式
+function add(num = 1,person = {}){
+    console.log(`相加后的值是${num} ${person?.age || 1}`);
+}
+add(2,person)
 
 // 6.箭头函数
+const add2 = (num=1,person={}) => {
+    console.log(`相加后的值是${num} ${person?.age || 1}`);
+}
+add2(2);
 
 // 7.Promise:
-// 原理：
+// 原理：为了解决回调地狱，使用promise
 // 改为异步 在异步中使用同步
 function fetchDataAwait() {
     fetch('https://jsonplaceholder.typicode.com/posts/1')

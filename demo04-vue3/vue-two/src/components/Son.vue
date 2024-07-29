@@ -16,6 +16,7 @@ const prop = defineProps({
 
 
 
+
  let emits = defineEmits(['pay']);
 
 function pay(){
@@ -29,7 +30,6 @@ function pay(){
   <li v-for="book in prop.books">{{book}}</li>
   <p>{{prop.info.name}} == {{prop.info.price}}</p>
   <button @click="pay">pay</button>
-<!--  <slot>-->
 <!--  </slot>-->
   <slot name="btn">
     <button></button>
